@@ -1,0 +1,69 @@
+{
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxlOsry1Z4uljS1y4yXQJCu+YvNUcwFpXvKmlTv9v5tRc8PWKHMoR7QCuemBD7vIGbkXDhhHpGJHgFKf9Z8qdQJk3kZDHn/iKHjUp2+ve97pRXRbqbTeliFFwrFYNoDqap1XuygN0JgK51Fmwqp0tongjdxLbU/s/8kWQpoZ8vYeboJyhpjaZ8sQkwKg5VtjYhm5XZSiObqdr16IuUhbmN29/0bcjNyLn5gfjxBkL6fXCUpkRBbQ+8m9eb9qIWuHe0/SD1aH5crmfpYLhPSxhTBmDDLL+GLVCxLBdbj4HgytSuc5shU1Np7KkzxPrgTRgNsLh1J+CgyWiojpDBoyMaQIDAQAB",
+  "manifest_version": 3,
+  "name": "Paid Tweets - X to Earn",
+  "description": "Turn your X tweets into valuable datasets for model training and earn cryptocurrency rewards.",
+  "version": "0.1.1",
+  "icons": {
+    "16": "logo-daeta.png",
+    "32": "logo-daeta.png",
+    "48": "logo-daeta.png",
+    "64": "logo-daeta.png",
+    "128": "logo-daeta.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "logo-daeta.png",
+      "32": "logo-daeta.png",
+      "48": "logo-daeta.png",
+      "64": "logo-daeta.png",
+      "128": "logo-daeta.png"
+    }
+  },
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "permissions": [
+    "tabs",
+    "background",
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "js": [
+        "assets/content.ts-loader-BQJnH1tM.js"
+      ],
+      "matches": [
+        "https://x.com/*"
+      ],
+      "css": [
+        "assets/main-kq0-xBac.css"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "https://x.com/*"
+      ],
+      "resources": [
+        "*",
+        "assets/main.tsx-D5HcvVdx.js",
+        "assets/content.ts-D2i10sT_.js"
+      ],
+      "use_dynamic_url": false
+    }
+  ],
+  "minimum_chrome_version": "102",
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "externally_connectable": {
+    "matches": [
+      "<all_urls>"
+    ]
+  }
+}
