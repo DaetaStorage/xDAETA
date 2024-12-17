@@ -1,1 +1,1 @@
-export const DaeTaContract = "0xEB980FdFe0dd0e434d048E66378aDfe64Ff6DBe8";
+export const DaeTaContract = "0x4a89F16fa98D3d09253Ef262d2de6f7cC8cf36c8";
