@@ -51,13 +51,17 @@ export const WalletProvider = ({ children }: WalletProviderProps) => {
         if (accounts && accounts.length > 0) {
           setAccount(accounts[0]);
           setConnection(true);
-          getOrRegisterUser();
         }
       }
     };
 
     checkConnection();
   }, []);
+
+  useEffect(() => {
+    if (!isConnected) return;
+    getOrRegisterUser();
+  }, [isConnected]);
 
   const connectWallet = async () => {
     try {
@@ -68,7 +72,6 @@ export const WalletProvider = ({ children }: WalletProviderProps) => {
         if (accounts) {
           setAccount(accounts[0]);
           setConnection(true);
-          getOrRegisterUser();
         }
         if (window.ethereum.networkVersion !== chainId.toString()) {
           await window.ethereum.request({
@@ -337,10 +340,7 @@ export const WalletProvider = ({ children }: WalletProviderProps) => {
       });
 
       if (resp && resp.success) return resp.data;
-      else
-        alert(
-          "Tweets loading is failed. Please try again"
-        );
+      else alert("Tweets loading is failed. Please try again");
     } catch (error) {
       console.error("Loading Tweets Error: ", error);
       return null;
