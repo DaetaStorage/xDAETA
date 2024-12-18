@@ -98,7 +98,7 @@ const Body = () => {
 
         {!isConnected && (
           <div className="absolute text-[12px] font-normal text-center text-[#262626] bottom-5 space-mono">
-            Utilize your GPT sessions to earn tokens effortlessly.
+            Utilize your X tweets to earn tokens effortlessly.
           </div>
         )}
       </div>
